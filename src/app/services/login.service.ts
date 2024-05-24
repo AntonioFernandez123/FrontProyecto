@@ -1,9 +1,22 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { authRequest } from '../models/authRequestDTO';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor() { }
-}
+  private url = "http://localhost:8081/auth/login";
+  private loggedIn = false;
+
+  constructor(private http: HttpClient) { }
+
+  login (user: authRequest): Observable<any> {
+    return this.http.post(this.url, user)
+    
+  }
+
+    
+  }
