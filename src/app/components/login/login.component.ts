@@ -12,13 +12,14 @@ export class LoginComponent {
   nomUsuario !: string;
   password !: string;
 
-  constructor(public service: LoginService){}
-    login(){
-      const user = {userName: this.nomUsuario, password:this.password};
-      this.service.login(user).subscribe((data) => {console.log(data);})
-    }
+  constructor(public service: LoginService) { }
+  
+  login() {
+    const user = { userName: this.nomUsuario, password: this.password };
+    this.service.login(user).subscribe((data) => { console.log(data); })
+  }
 
-  onSubmit(loginForm : NgForm){
+  onSubmit(loginForm: NgForm) {
     console.log(this.nomUsuario);
     console.log(this.password);
   }
