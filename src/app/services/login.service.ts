@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
 
-  private url = "http://localhost:8081/auth/login";
+  private url = "http://localhost:8081/api/auth/login";
 
   constructor(private http: HttpClient) { }
 
@@ -17,5 +17,4 @@ export class LoginService {
     
   }
 
-    
-  }
+}

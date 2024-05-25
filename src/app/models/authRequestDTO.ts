@@ -1,9 +1,9 @@
 export class authRequest{
-    userName : string
+    nomUsuario : string
     password : string  
 
-    constructor(userName : string, password : string){
-        this.userName = userName
+    constructor(nomUsuario : string, password : string){
+        this.nomUsuario = nomUsuario
         this.password = password
     }
 }

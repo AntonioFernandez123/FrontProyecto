@@ -8,7 +8,7 @@
         <input type="text" class="form-control" id="nomUsuario" name="nomUsuario" required ngModel #nomUsuario="ngModel">
 
         <label for="password">Contraseña:</label>
-        <input type="text" class="form-control" id="password" name="password" required ngModel #password="ngModel">
+        <input type="password" class="form-control" id="password" name="password" required ngModel #password="ngModel">
 
         <div [hidden]="nomUsuario.valid && password.valid || nomUsuario.pristine && password.pristine" class="alert alert-danger">Nombre de Usuario o Contraseña No Validos</div>
         
