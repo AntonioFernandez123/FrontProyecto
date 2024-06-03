@@ -1,0 +1,15 @@
+.formularioTeacher{
+    text-align: center;
+    margin: 3% 10%;
+}
+.headerTeacher{
+    display: flex;
+    justify-content: space-between;
+}
+.tablaTeacher{
+    border: 1px solid black;
+}
+.botonMB{
+    background-color: transparent ;
+    border: 0px;
+}

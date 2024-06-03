@@ -1,1 +1,34 @@
-<p>admin works!</p>
+<div class="formularioTeacher">
+    <h1>Bienvenido Administrador</h1>
+    <div class="headerTeacher">
+        <h2>Profesores:</h2>
+        <a routerLink="insertaProfesor"><button class="btn btn-primary">Insertar Profesor</button></a>
+    </div>
+    <table class="table table-striped tablaTeacher">
+        <thead>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>DNI</th>
+            <th>Rol</th>
+            <th>Email</th>
+            <th>Nombre de Usuario</th>
+            <th>Modificar</th>
+            <th>Borrar</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let elemento of service.arrTeacher">
+                <td>{{elemento.idUser}}</td>
+                <td>{{elemento.name}}</td>
+                <td>{{elemento.lastName}}</td>
+                <td>{{elemento.dni}}</td>
+                <td>{{elemento.role}}</td>
+                <td>{{elemento.email}}</td>
+                <td>{{elemento.userName}}</td>
+                <td><a routerLink="actualizaProfesor/{{elemento.idUser}}">Modificar</a></td>
+                <td><button class="botonMB" (click)="deleteTeacher(elemento.idUser)"><u>Borrar</u></button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

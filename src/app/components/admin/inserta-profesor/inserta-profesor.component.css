@@ -1,0 +1,20 @@
+.form-login{
+    font-size: larger;
+}
+.form-title{
+    text-align: center;
+}
+.form-group{
+    margin:3% 30%;
+    padding:20px 30px;
+    background-color: lightgrey;
+    border-radius: 20px;
+}
+.form-control{
+    margin-bottom: 10px;
+}
+.btn{
+    margin-top: 10px;
+    margin-left: 22%;
+    font-size: large;
+}

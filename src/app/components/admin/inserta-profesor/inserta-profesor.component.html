@@ -1,0 +1,33 @@
+<form (ngSubmit)="onSubmit(InsertaProf)" #InsertaProf="ngForm" class="form-login">
+
+    <div class="form-group mb-3">
+
+        <h3 class="form-title">Nuevo Profesor</h3>
+        <br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" required ngModel #nombre="ngModel">
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" class="form-control" id="apellido" name="apellido" required ngModel #apellido="ngModel">
+
+        <label for="email">Email:</label>
+        <input type="text" class="form-control" id="email" name="email" required ngModel #email="ngModel">
+
+        <label for="dni">DNI:</label>
+        <input type="text" class="form-control" id="dni" name="dni" required ngModel #dni="ngModel">
+
+        <label for="userName">Nombre de Usuario:</label>
+        <input type="text" class="form-control" id="userName" name="userName" required ngModel #userName="ngModel">
+
+        <label for="password">Contraseña:</label>
+        <input type="password" class="form-control" id="password" name="password" required ngModel #password="ngModel">
+
+        <div [hidden]="nombre.valid || apellido.valid || email.valid || dni.valid || userName.valid || password.valid &&
+        nombre.pristine || apellido.pristine || email.pristine || dni.pristine || userName.pristine || password.pristine"
+        class="alert alert-danger">Debes Completar Todos Los Campos</div>
+
+        <button type="submit" class="btn btn-success" [disabled]="!InsertaProf.form.valid">Insertar</button>
+        <a routerLink="/admin"> <button class="btn btn-success">Voler Atras</button> </a>
+
+    </div>
+</form>

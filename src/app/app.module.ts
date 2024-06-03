@@ -12,6 +12,8 @@ import { LoginService } from './services/login.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { StudentComponent } from './components/student/student.component';
 import { TeacherComponent } from './components/teacher/teacher.component';
+import { InsertaProfesorComponent } from './components/admin/inserta-profesor/inserta-profesor.component';
+import { ActualizaProfesorComponent } from './components/admin/actualiza-profesor/actualiza-profesor.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { TeacherComponent } from './components/teacher/teacher.component';
     LoginComponent,
     AdminComponent,
     StudentComponent,
-    TeacherComponent
+    TeacherComponent,
+    InsertaProfesorComponent,
+    ActualizaProfesorComponent
   ],
   imports: [
     BrowserModule,

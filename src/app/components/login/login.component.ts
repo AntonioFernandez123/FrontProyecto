@@ -18,8 +18,6 @@ export class LoginComponent {
   onSubmit(loginForm: NgForm) {
     this.nomUsuario = loginForm.value.nomUsuario;
     this.password = loginForm.value.password;
-    console.log(this.nomUsuario);
-    console.log(this.password);
     // const user = {nomUsuario: this.nomUsuario, password: this.password}
     // this.service.login(user).subscribe((data) => { console.log(data); })
     this.navega()
@@ -28,6 +26,10 @@ export class LoginComponent {
   navega(){
     if (this.nomUsuario === 'admin' && this.password === 'admin') {
       this.router.navigate(['admin']);
+    }else if(this.nomUsuario === 'teacher' && this.password === 'teacher'){
+      this.router.navigate(['teacher']);
+    }else if(this.nomUsuario === 'student' && this.password === 'student'){
+      this.router.navigate(['student']);
     }else{
       this.router.navigate(['']);
     }
