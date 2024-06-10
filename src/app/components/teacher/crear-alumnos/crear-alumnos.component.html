@@ -1,0 +1,43 @@
+<form (ngSubmit)="onSubmit(insertaAlumno)" #insertaAlumno="ngForm" class="form-login">
+    <div class="form-group mb-3">
+
+        <h3 class="form-title">Nuevo Alumno</h3>
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" required ngModel #nombre="ngModel">
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" class="form-control" id="apellido" name="apellido" required ngModel #apellido="ngModel">
+
+        <label for="dni">DNI:</label>
+        <input type="text" class="form-control" id="dni" name="dni" required ngModel #dni="ngModel">
+
+        <label for="email">Email:</label>
+        <input type="text" class="form-control" id="email" name="email" required ngModel #email="ngModel">
+
+        <label for="userName">Nombre de Usuario:</label>
+        <input type="text" class="form-control" id="userName" name="userName" required ngModel #userName="ngModel">
+
+        <label for="pass">Contraseña:</label>
+        <input type="password" class="form-control" id="pass" name="pass" required ngModel #pass="ngModel">
+
+        <div [hidden]="nombre.valid || apellido.valid || dni.valid || email.valid || userName.valid || pass.valid
+        && nombre.pristine || apellido.pristine || dni.pristine || email.pristine || userName.pristine || pass.pristine"
+            class="alert alert-danger">Debes Completar Todos Los Campos</div>
+
+        <button type="submit" class="btn btn-secondary botonNormal" [disabled]="!insertaAlumno.form.valid">Insertar</button>
+        <button type="button" class="btn btn-secondary botonNormal" (click)="goBack()">Voler Atras</button>
+    
+    </div>
+</form>
+
+<form (ngSubmit)="onSubmitCSV(insertaAlumnoCSV)" #insertaAlumnoCSV="ngForm" class="form-login">
+    <div class="form-group mb-3">
+
+        <h4 class="tituloCSV">Añadir Alumnos Mediante CSV</h4> 
+        <input type="file" class="btn btn-secondary botonCSV" (change)="onFileChange($event)" accept=".csv" required>
+
+        <button type="submit" class="btn btn-secondary botonNormal" [disabled]="!file">Insertar</button>
+        <button type="button" class="btn btn-secondary botonNormal" (click)="goBack()">Voler Atras</button>
+    </div>
+</form>
+

@@ -1,0 +1,46 @@
+<div class="verMateriaBody">
+    <div class="listadoYagregado">
+        <h3>Listado de Alumnos</h3>
+        <a routerLink="insertaAlumnos"><button class="btn btn-primary">Agergar Alumnos</button></a>
+    </div>
+    <div class="listadoYagregado">
+        <h3>Listado de Examenes</h3>
+        <a routerLink=""><button class="btn btn-primary">Agergar Examenes</button></a>
+    </div>
+    <div class="verMateriaAlu">
+        <table class="table table-striped">
+            <thead>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Nombre de Usuario</th>
+                <th>Email</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of arrStudent">
+                    <td>{{student.name}}</td>
+                    <td>{{student.lastName}}</td>
+                    <td>{{student.userName}}</td>
+                    <td>{{student.email}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="verMateriaExam">
+        <table class="table table-striped">
+            <thead>
+                <th>Descipcion</th>
+                <th>Temas</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let exam of arrExam">
+                    <td>{{exam.description}}</td>
+                    <td>{{exam.themes}}</td>
+                    <td>{{exam.date}}</td>
+                    <td>{{exam.hour}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -14,6 +14,13 @@ import { StudentComponent } from './components/student/student.component';
 import { TeacherComponent } from './components/teacher/teacher.component';
 import { InsertaProfesorComponent } from './components/admin/inserta-profesor/inserta-profesor.component';
 import { ActualizaProfesorComponent } from './components/admin/actualiza-profesor/actualiza-profesor.component';
+import { InsertaCursoComponent } from './components/teacher/inserta-curso/inserta-curso.component';
+import { InsertaMateriaComponent } from './components/teacher/inserta-materia/inserta-materia.component';
+import { VerMateriaComponent } from './components/teacher/ver-materia/ver-materia.component';
+import { ModificaMateriaComponent } from './components/teacher/modifica-materia/modifica-materia.component';
+import { InsertaAlumnosComponent } from './components/teacher/inserta-alumnos/inserta-alumnos.component';
+import { CrearAlumnosComponent } from './components/teacher/crear-alumnos/crear-alumnos.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +30,13 @@ import { ActualizaProfesorComponent } from './components/admin/actualiza-profeso
     StudentComponent,
     TeacherComponent,
     InsertaProfesorComponent,
-    ActualizaProfesorComponent
+    ActualizaProfesorComponent,
+    InsertaCursoComponent,
+    InsertaMateriaComponent,
+    VerMateriaComponent,
+    ModificaMateriaComponent,
+    InsertaAlumnosComponent,
+    CrearAlumnosComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,7 @@
+.tablaAlumnos{
+    margin: 10px 10%;
+}
+.headerInsertaAlumnos{
+    display: flex;
+    justify-content: space-between;
+}

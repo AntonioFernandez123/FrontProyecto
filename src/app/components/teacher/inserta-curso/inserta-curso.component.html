@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmit(insertaCurso)" #insertaCurso="ngForm" class="form-login">
+    <div class="form-group mb-3">
+
+        <h3 class="form-title">Nuevo Curso</h3>
+        <br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" required ngModel #nombre="ngModel">
+
+        <label for="abreviacion">Abreviacion:</label>
+        <input type="text" class="form-control" id="abreviacion" name="abreviacion" required ngModel #abreviacion="ngModel">
+
+        <div [hidden]="nombre.valid || abreviacion.valid && nombre.pristine || abreviacion.pristine"
+        class="alert alert-danger">Debes Completar Todos Los Campos</div>
+
+        <button type="submit" class="btn btn-secondary" [disabled]="!insertaCurso.form.valid">Insertar</button>
+        <button type="button" class="btn btn-secondary"(click)="goBack()">Voler Atras</button>
+
+    </div>
+</form>

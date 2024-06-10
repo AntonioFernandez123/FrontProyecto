@@ -1,3 +1,5 @@
+
+import { Subject } from "./subjectDTO"
 import { Teacher } from "./teacherDTO"
 
 export class Grade{
@@ -5,12 +7,13 @@ export class Grade{
     idGrade: number
     name: string
     shortName: string
-    teacher: Teacher
+    teacher?: Teacher
+    subjects?: Subject[]
 
-    constructor(idGrade: number, name: string, shortName: string, teacher: Teacher) {
-        this.idGrade = idGrade
-        this.name = name
-        this.shortName = shortName
-        this.teacher = teacher
+    constructor(teacher?: Teacher, idGrade?: number, name?: string, shortName?: string, ) {
+        this.idGrade = idGrade || 0
+        this.name = name || ""
+        this.shortName = shortName || ""
+        this.teacher = teacher 
     }
 }

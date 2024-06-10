@@ -1,1 +1,26 @@
-<p>teacher works!</p>
+<div>
+    <h2>Bienvenido Profesor</h2>
+    <div class="headerTeacher">
+        <h3>Tus Cursos Disponibles:</h3>
+        <a routerLink="insertaCurso"><button class="btn btn-primary">Insertar Curso</button></a>
+    </div>
+    <hr>
+    <div class="bodyTeacher">
+        <div *ngFor="let grade of arrGrade">
+            <div class="divGrade">
+                <b>{{grade.name}} ({{grade.shortName}})</b>
+                <a routerLink="insertaMateria/{{grade.idGrade}}"><button class="btn btn-primary">Agregar Materia</button></a>
+                <button class="btn btn-danger" (click)="deleteCurso(grade.idGrade)">Borrar Curso</button>
+            </div>
+            <div class="divSubject" *ngFor="let subject of grade.subjects">
+                {{subject.name}} ({{subject.shortName}})
+                {{subject.hourPerWeek}} horas/semana
+                <div>
+                    <a routerLink="modificaMateria/{{grade.idGrade}}/{{subject.idSubject}}"><button class="btn btn-info">Editar</button></a>
+                    <a routerLink="verMateria/{{subject.idSubject}}"><button class="btn btn-success">Ver Materia</button></a>
+                    <button class="btn btn-danger" (click)="deleteMateria(subject.idSubject)">Eliminar Materia</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

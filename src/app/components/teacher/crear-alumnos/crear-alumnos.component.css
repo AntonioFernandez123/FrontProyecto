@@ -1,0 +1,29 @@
+
+.form-login{
+    font-size: larger;
+}
+.form-title{
+    text-align: center;
+}
+.form-group{
+    margin:1% 30%;
+    padding:20px 30px;
+    background-color: lightgrey;
+    border-radius: 20px;
+}
+.form-control{
+    /* margin-bottom: 10px; */
+}
+.botonNormal{
+    margin-top: 10px;
+    margin-left: 21%;
+    font-size: large;
+}
+.tituloCSV{
+    margin-top: 10px;
+    text-align: center;
+}
+.botonCSV{
+    margin-top: 10px;
+    margin-left: 13%;
+}

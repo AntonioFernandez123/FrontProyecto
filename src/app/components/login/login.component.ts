@@ -27,9 +27,9 @@ export class LoginComponent {
     if (this.nomUsuario === 'admin' && this.password === 'admin') {
       this.router.navigate(['admin']);
     }else if(this.nomUsuario === 'teacher' && this.password === 'teacher'){
-      this.router.navigate(['teacher']);
+      this.router.navigate(['teacher/1']);
     }else if(this.nomUsuario === 'student' && this.password === 'student'){
-      this.router.navigate(['student']);
+      this.router.navigate(['student/1']);
     }else{
       this.router.navigate(['']);
     }

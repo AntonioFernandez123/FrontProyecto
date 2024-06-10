@@ -6,6 +6,12 @@ import { InsertaProfesorComponent } from './components/admin/inserta-profesor/in
 import { ActualizaProfesorComponent } from './components/admin/actualiza-profesor/actualiza-profesor.component';
 import { TeacherComponent } from './components/teacher/teacher.component';
 import { StudentComponent } from './components/student/student.component';
+import { InsertaCursoComponent } from './components/teacher/inserta-curso/inserta-curso.component';
+import { InsertaMateriaComponent } from './components/teacher/inserta-materia/inserta-materia.component';
+import { VerMateriaComponent } from './components/teacher/ver-materia/ver-materia.component';
+import { ModificaMateriaComponent } from './components/teacher/modifica-materia/modifica-materia.component';
+import { InsertaAlumnosComponent } from './components/teacher/inserta-alumnos/inserta-alumnos.component';
+import { CrearAlumnosComponent } from './components/teacher/crear-alumnos/crear-alumnos.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -15,8 +21,14 @@ const routes: Routes = [
   {path:'admin/actualizaProfesor/:id',component:ActualizaProfesorComponent},
 
   //TEACHER
-  {path:'teacher',component:TeacherComponent},
-
+  {path:'teacher/:id',component:TeacherComponent},
+  {path:'teacher/:id/insertaCurso',component:InsertaCursoComponent},
+  {path:'teacher/:id/insertaMateria/:idCurso',component:InsertaMateriaComponent},
+  {path:'teacher/:id/verMateria/:idMateria',component:VerMateriaComponent},
+  {path:'teacher/:id/modificaMateria/:idCurso/:idMateria',component:ModificaMateriaComponent},
+  {path:'teacher/:id/verMateria/:idMateria/insertaAlumnos',component:InsertaAlumnosComponent},
+  {path:'teacher/:id/verMateria/:idMateria/insertaAlumnos/crearAlumnos',component:CrearAlumnosComponent},
+ 
   //SUTDENT
   {path:'student',component:StudentComponent},
 

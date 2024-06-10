@@ -1,0 +1,29 @@
+<div class="tablaAlumnos">
+    <div class="headerInsertaAlumnos">
+        <h3>Listado de Estudiantes</h3>
+        <a routerLink="crearAlumnos"><button class="btn btn-primary">Crear Estudiante</button></a>
+    </div>
+    <hr>
+    <table class="table table-striped">
+        <thead>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>DNI</th>
+            <th>Email</th>
+            <th>Nombre de Usuario</th>
+            <th>Insertar</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let elemento of students">
+                <td>{{elemento.idUser}}</td>
+                <td>{{elemento.name}}</td>
+                <td>{{elemento.lastName}}</td>
+                <td>{{elemento.dni}}</td>
+                <td>{{elemento.email}}</td>
+                <td>{{elemento.userName}}</td>
+                <td><button class="btn btn-primary" (click)="insertaAlumno(elemento)">Insertar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

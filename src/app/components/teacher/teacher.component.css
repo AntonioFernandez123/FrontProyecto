@@ -1,0 +1,25 @@
+h2{
+    text-align: center;
+}
+.headerTeacher{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.bodyTeacher{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 2% 5%;
+    gap: 50px;
+}
+.divGrade{
+    display: flex;
+    justify-content: space-around;
+    background-color: lightsteelblue;
+}
+.divSubject{
+    background-color: lightyellow;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
