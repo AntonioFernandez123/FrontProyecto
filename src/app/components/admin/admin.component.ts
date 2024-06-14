@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TeacherService } from '../../services/teacher.service';
+import { Role } from '../../models/role';
 
 @Component({
   selector: 'app-admin',
@@ -12,6 +13,11 @@ export class AdminComponent implements OnInit {
   constructor(public service: TeacherService, private router: Router){}
 
   ngOnInit(): void {
+    const user = sessionStorage.getItem('user');
+    if( JSON.parse(user != null ? user : "{}" ).role != Role.ADMIN){
+      this.router.navigate([""])
+    }
+
     this.updateList()
   }
 
@@ -22,6 +28,11 @@ export class AdminComponent implements OnInit {
         this.updateList();
       })
     }
+  }
+
+  cerrarSesion(){
+    sessionStorage.removeItem('user')
+    this.router.navigate([""])
   }
 
   updateList(){

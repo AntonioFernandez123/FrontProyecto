@@ -1,0 +1,23 @@
+.titulo{
+    margin-top: 1%;
+    display: flex;
+    justify-content: space-around;
+}
+.headerStudent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.bodyStudent{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 2% 5%;
+    gap: 50px;
+}
+    
+.divSubject{
+    display: flex;
+    justify-content: space-around;
+    background-color: lightsteelblue;
+    font-size: large;
+}

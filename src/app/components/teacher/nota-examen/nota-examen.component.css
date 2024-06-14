@@ -14,9 +14,7 @@
     margin-bottom: 10px;
 }
 .btn{
-    margin-left: 40%;
+    margin-top: 10px;
+    margin-left: 15%;
     font-size: large;
-}
-.mensajeError{
-    text-align: center;
 }

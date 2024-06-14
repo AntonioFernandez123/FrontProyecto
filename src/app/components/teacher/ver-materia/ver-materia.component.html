@@ -1,3 +1,7 @@
+<div class="nombreSubject">
+    <h2><b>{{subject.name}}</b></h2>
+</div>
+<hr>
 <div class="verMateriaBody">
     <div class="listadoYagregado">
         <h3>Listado de Alumnos</h3>
@@ -5,7 +9,7 @@
     </div>
     <div class="listadoYagregado">
         <h3>Listado de Examenes</h3>
-        <a routerLink=""><button class="btn btn-primary">Agergar Examenes</button></a>
+        <a routerLink="insertaExamenes"><button class="btn btn-primary">Agergar Examenes</button></a>
     </div>
     <div class="verMateriaAlu">
         <table class="table table-striped">
@@ -32,6 +36,8 @@
                 <th>Temas</th>
                 <th>Fecha</th>
                 <th>Hora</th>
+                <th></th>
+                <th></th>
             </thead>
             <tbody>
                 <tr *ngFor="let exam of arrExam">
@@ -39,6 +45,8 @@
                     <td>{{exam.themes}}</td>
                     <td>{{exam.date}}</td>
                     <td>{{exam.hour}}</td>
+                    <td><a routerLink="verExamen/{{exam.idExam}}"><button class="btn btn-success">Notas</button></a></td>
+                    <td><a routerLink="modificaExamen/{{exam.idExam}}"><button class="btn btn-info">Modificar</button></a></td>
                 </tr>
             </tbody>
         </table>

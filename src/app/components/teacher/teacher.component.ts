@@ -5,6 +5,7 @@ import { SubjectService } from '../../services/subject.service';
 import { TeacherService } from '../../services/teacher.service';
 import { Subject } from '../../models/subjectDTO';
 import { Grade } from '../../models/gradeDTO';
+import { Teacher } from '../../models/teacherDTO';
 
 @Component({
   selector: 'app-teacher',
@@ -15,19 +16,35 @@ export class TeacherComponent {
 
   id: number = 0;
   arrGrade:Grade[]=[]
+  teacher:Teacher = new Teacher();
 
   constructor(public teacherService: TeacherService,public gradeService: GradeService, 
-    public subjectService:SubjectService, private router: Router, private route: ActivatedRoute){}
+    public subjectService:SubjectService, private route: ActivatedRoute, private router:Router){}
 
   ngOnInit(): void {
-    const idParam = this.route.snapshot.paramMap.get('id');
+    let idParam = this.route.snapshot.paramMap.get('id');
+
+    const user = sessionStorage.getItem('user');
+    const json = JSON.parse(user != null ? user : "{}")
+    if( json.role?.toString() == "TEACHER"){
+      if (json.token != idParam){
+        this.router.navigate(["teacher/"+ json.token])
+        idParam = json.token;
+      }
+    }else{
+      this.router.navigate([""])
+    }
+
     this.id = idParam ? +idParam : 1
     this.getTeacherById();
     this.updateList()
   }
 
   getTeacherById(){
-    this.teacherService.getTeacherById(this.id).subscribe((data) => { console.log(data)})
+    this.teacherService.getTeacherById(this.id).subscribe((data) => {
+       console.log(data)
+        this.teacher = data
+      })
   }
 
   updateList(){
@@ -38,10 +55,14 @@ export class TeacherComponent {
         
         this.subjectService.getAllSubjectsWithTeacherAndGradeId(this.id, grade.idGrade).subscribe(res => {
           grade.subjects = res
-          
         })
       }
     })
+  }
+
+  cerrarSesion(){
+    sessionStorage.removeItem('user')
+    this.router.navigate([""])
   }
 
   deleteCurso(idGrade: number){

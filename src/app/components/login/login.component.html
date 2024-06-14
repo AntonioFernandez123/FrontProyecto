@@ -12,7 +12,11 @@
 
         <div [hidden]="nomUsuario.valid || password.valid && nomUsuario.pristine || password.pristine" class="alert alert-danger">Nombre de Usuario o Contraseña No Validos</div>
         
+        <div [hidden]="!mensaje" class="mensajeError">{{mensaje}}</div>
+        <br>
+
         <button type="submit" class="btn btn-success" [disabled]="!Formulario.form.valid">Acceder</button>
 
+        
     </div>
 </form>

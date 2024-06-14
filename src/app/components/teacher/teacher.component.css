@@ -1,7 +1,10 @@
-h2{
-    text-align: center;
+.titulo{
+    margin-top: 1%;
+    display: flex;
+    justify-content: space-around;
 }
 .headerTeacher{
+
     display: flex;
     flex-direction: row;
     justify-content: space-around;

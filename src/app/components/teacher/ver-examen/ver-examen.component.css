@@ -1,0 +1,7 @@
+.tablaNotas{
+    margin: 2% 10%;
+}
+.headerTablaNotas{
+    display: flex;
+    justify-content: space-between;
+}

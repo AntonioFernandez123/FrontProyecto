@@ -17,7 +17,7 @@ export class InsertaMateriaComponent {
   id: number = 0;
 
   constructor(private location: Location, private route: ActivatedRoute, private subjectService: SubjectService){
-    const idParam = this.route.snapshot.paramMap.get('id');
+    const idParam = this.route.snapshot.paramMap.get('idCurso');
     this.id = idParam ? +idParam : 1
   }
 

@@ -1,0 +1,27 @@
+<form (ngSubmit)="onSubmit(insertaExamen)" #insertaExamen="ngForm" class="form-login">
+    <div class="form-group mb-3">
+
+        <h3 class="form-title">Nuevo Examen</h3>
+        <br>
+        <label for="desc">Descripcion:</label>
+        <input type="text" class="form-control" id="desc" name="desc" required ngModel #desc="ngModel">
+
+        <label for="tema">Temas:</label>
+        <input type="text" class="form-control" id="tema" name="tema" required ngModel #tema="ngModel">
+
+        <label for="fecha">Fecha:</label>
+        <input type="text" class="form-control" id="fecha" name="fecha" required ngModel #fecha="ngModel">
+
+        <label for="hora">Hora:</label>
+        <input type="text" class="form-control" id="hora" name="hora" required ngModel #hora="ngModel">
+
+        <div [hidden]="desc.valid || tema.valid || fecha.valid || hora.valid
+        && desc.pristine || tema.pristine || fecha.pristine || hora.pristine"
+        class="alert alert-danger">Debes Completar Todos Los Campos</div>
+
+        <button type="submit" class="btn btn-secondary" [disabled]="!insertaExamen.form.valid">Insertar</button>
+        <button type="button" class="btn btn-secondary" (click)="goBack()">Voler Atras</button>
+
+    </div>
+</form>
+

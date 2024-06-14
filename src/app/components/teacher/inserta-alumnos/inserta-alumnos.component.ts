@@ -1,11 +1,7 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { Teacher } from '../../../models/teacherDTO';
-import { Role } from '../../../models/role';
 import { StudentService } from '../../../services/student.service';
-import { Student } from '../../../models/studentDTO';
 import { SubjectService } from '../../../services/subject.service';
 import { StudentResponse } from '../../../models/studentResponseDTO';
 
@@ -34,13 +30,10 @@ export class InsertaAlumnosComponent {
     this.studentService.getAllStudents().subscribe((res) => {this.students = res, console.log(res)});
   }
 
-  insertaAlumno(alu: StudentResponse){
-    this.students.push(alu);
-    this.subjectService.addStudentsToSubject(this.idCurso,this.students).subscribe()
-  }
-
-
-  onSubmit(f: NgForm){
+  insertaAlumno(idAlu: number){
+    this.studentService.getStudentById(idAlu).subscribe((data) => {
+      this.subjectService.addStudentsToSubject(this.idCurso,[data]).subscribe()
+    })
     
   }
 }

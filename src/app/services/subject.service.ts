@@ -43,4 +43,8 @@ export class SubjectService {
   addStudentsToSubject(idSubject: number, students: StudentResponse[]):Observable<void>{
     return this.http.patch<void>(`${this.url}/addStudent?idSubject=${idSubject}`, students)
   }
+
+  getAllSubjectsWithStudentId(idStudent: number): Observable<Subject[]>{
+    return this.http.get<Subject[]>(`${this.url}/getAllSubjectsWithStudentId`, {params: {idStudent: idStudent.toString()}})
+  } 
 }

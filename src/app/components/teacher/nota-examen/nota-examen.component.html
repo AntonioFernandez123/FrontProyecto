@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit(notaExamen)" #notaExamen="ngForm" class="form-login">
+    <div class="form-group mb-3">
+
+        <h3 class="form-title">Establecer Nota</h3>
+        <br>
+        <label for="nota">Nota:</label>
+        <input type="number" class="form-control" id="nota" name="nota" required ngModel #nota="ngModel">
+        
+        <div [hidden]="nota.valid || nota.pristine" class="alert alert-danger">Debes Completar Todos Los Campos</div>
+
+        <button type="submit" class="btn btn-secondary" [disabled]="!notaExamen.form.valid">Establecer Nota</button>
+        <button type="button" class="btn btn-secondary"(click)="goBack()">Volver Atras</button>
+
+    </div>
+</form>

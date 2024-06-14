@@ -20,6 +20,10 @@ import { VerMateriaComponent } from './components/teacher/ver-materia/ver-materi
 import { ModificaMateriaComponent } from './components/teacher/modifica-materia/modifica-materia.component';
 import { InsertaAlumnosComponent } from './components/teacher/inserta-alumnos/inserta-alumnos.component';
 import { CrearAlumnosComponent } from './components/teacher/crear-alumnos/crear-alumnos.component';
+import { InsertaExamenComponent } from './components/teacher/inserta-examen/inserta-examen.component';
+import { VerExamenComponent } from './components/teacher/ver-examen/ver-examen.component';
+import { ModificaExamenComponent } from './components/teacher/modifica-examen/modifica-examen.component';
+import { NotaExamenComponent } from './components/teacher/nota-examen/nota-examen.component';
 
 
 @NgModule({
@@ -36,7 +40,12 @@ import { CrearAlumnosComponent } from './components/teacher/crear-alumnos/crear-
     VerMateriaComponent,
     ModificaMateriaComponent,
     InsertaAlumnosComponent,
-    CrearAlumnosComponent
+    CrearAlumnosComponent,
+    InsertaExamenComponent,
+    VerExamenComponent,
+    ModificaExamenComponent,
+    NotaExamenComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -44,7 +53,8 @@ import { CrearAlumnosComponent } from './components/teacher/crear-alumnos/crear-
     HttpClientModule,
     RouterModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+
   ],
   providers: [
     LoginService

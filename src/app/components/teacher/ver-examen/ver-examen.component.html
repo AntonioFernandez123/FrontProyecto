@@ -1,0 +1,20 @@
+<div class="tablaNotas">
+    <div class="headerTablaNotas">
+        <h3>Listado de Notas</h3>
+        <button class="btn btn-primary" (click)="exportarNotas()">Exportar Notas (CSV)</button>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <th>Alumno</th>
+            <th>Nota</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let elemento of arrExam_Student">
+                <td>{{elemento.student?.name}} {{elemento.student?.lastName}} ({{elemento.student?.userName}})</td>
+                <td>{{elemento.note === 0 ? "Sin Corregir" : elemento.note}}</td>
+                <td><a routerLink="notaExamen/{{elemento.student?.idUser}}"><button class="btn btn-primary">{{elemento.note === 0 ? "Corregir" : "Modificar"}}</button></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

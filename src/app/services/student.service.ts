@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Student } from '../models/studentDTO';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { StudentResponse } from '../models/studentResponseDTO';
+import { Exam_Student } from '../models/Exam_Student';
 
 @Injectable({
   providedIn: 'root'
@@ -42,5 +43,10 @@ export class StudentService {
 
   getAllStudentInSubject(idSubject: number): Observable<Student[]>{
     return this.http.get<Student[]>(`${this.url}/getAllStudentInSubject`, {params: {idSubject: idSubject.toString()}})
+  }
+
+  findAllWithIdExam(idExam: number): Observable<Blob>{
+    const headers = new HttpHeaders({'Accept':'text/csv'})
+    return this.http.get(`${this.url}/findAllWithIdExam?idExam=${idExam}`, { headers, responseType: 'blob' })
   }
 }

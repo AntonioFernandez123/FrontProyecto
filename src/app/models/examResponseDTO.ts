@@ -4,16 +4,16 @@ export class ExamResponse{
     idExam: number
     themes: string
     description: string
-    date: Date
-    hour: Date
-    subject: Subject
+    date: string
+    hour: string
+    subject?: Subject
 
-    constructor(idExam: number, themes: string, description: string, date: Date, hour: Date, subject: Subject){
-        this.idExam = idExam
-        this.themes = themes
-        this.description = description
-        this.date = date
-        this.hour = hour
-        this.subject = subject
+    constructor(idExam?: number, themes?: string, description?: string, date?: string, hour?: string, subject?: Subject){
+        this.idExam = idExam || 0
+        this.themes = themes || ""
+        this.description = description || ""
+        this.date = date || ""
+        this.hour = hour || ""
+        this.subject = subject 
     }
 }

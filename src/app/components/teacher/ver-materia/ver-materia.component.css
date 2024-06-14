@@ -1,7 +1,11 @@
+.nombreSubject{
+    margin-top: 1%;
+    text-align: center;
+}
 .verMateriaBody{
     margin: 10px;
     display: grid;
-    grid-template-columns: 57% 40%;
+    grid-template-columns: 40% 57%;
     grid-gap: 40px ;
 }
 .listadoYagregado{

@@ -12,6 +12,10 @@ import { VerMateriaComponent } from './components/teacher/ver-materia/ver-materi
 import { ModificaMateriaComponent } from './components/teacher/modifica-materia/modifica-materia.component';
 import { InsertaAlumnosComponent } from './components/teacher/inserta-alumnos/inserta-alumnos.component';
 import { CrearAlumnosComponent } from './components/teacher/crear-alumnos/crear-alumnos.component';
+import { InsertaExamenComponent } from './components/teacher/inserta-examen/inserta-examen.component';
+import { VerExamenComponent } from './components/teacher/ver-examen/ver-examen.component';
+import { ModificaExamenComponent } from './components/teacher/modifica-examen/modifica-examen.component';
+import { NotaExamenComponent } from './components/teacher/nota-examen/nota-examen.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -28,9 +32,14 @@ const routes: Routes = [
   {path:'teacher/:id/modificaMateria/:idCurso/:idMateria',component:ModificaMateriaComponent},
   {path:'teacher/:id/verMateria/:idMateria/insertaAlumnos',component:InsertaAlumnosComponent},
   {path:'teacher/:id/verMateria/:idMateria/insertaAlumnos/crearAlumnos',component:CrearAlumnosComponent},
- 
+  {path:'teacher/:id/verMateria/:idMateria/insertaExamenes',component:InsertaExamenComponent},
+  {path:'teacher/:id/verMateria/:idMateria/verExamen/:idExamen',component:VerExamenComponent},
+  {path:'teacher/:id/verMateria/:idMateria/modificaExamen/:idExamen',component:ModificaExamenComponent},
+  {path:'teacher/:id/verMateria/:idMateria/verExamen/:idExamen/notaExamen/:idAlumno',component:NotaExamenComponent},
+
   //SUTDENT
-  {path:'student',component:StudentComponent},
+  {path:'student/:idAlumno',component:StudentComponent},
+  
 
   //ERROR
   {path:'**',component:LoginComponent},
